@@ -1,0 +1,33 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+}
+
+html,
+body,
+#root {
+    width: 100%;
+    min-height: 100%;
+}
+
+body {
+    background-color: black;
+    color: white;
+
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+main {
+    width: 100%;
+}
+
+section,
+[id] {
+    scroll-margin-top: 80px;
+}

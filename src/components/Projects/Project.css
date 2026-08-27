@@ -1,0 +1,265 @@
+/* Section Container */
+.projects-section {
+  width: 100%;
+  background-color: #000000;
+  color: #ffffff;
+  padding: 80px 24px;
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  display: flex;
+  justify-content: center;
+}
+
+.projects-container {
+  width: 100%;
+  max-width: 1200px;
+}
+
+/* Header */
+.projects-header {
+  margin-bottom: 40px;
+}
+
+.projects-subtitle {
+  color: aquamarine;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.projects-title {
+  font-size: 36px;
+  font-weight: 800;
+  margin: 0;
+  color: #ffffff;
+}
+
+/* Showcase Container */
+.showcase-card {
+  background-color: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 32px;
+  min-height: 420px;
+}
+
+.showcase-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+  animation: fadeIn 0.35s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0.3;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Image */
+.showcase-image-wrapper {
+  width: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  background-color: #0d0d0d;
+}
+
+.showcase-image {
+  width: 100%;
+  height: 100%;
+  max-height: 360px;
+  object-fit: cover;
+  display: block;
+}
+
+/* Details */
+.showcase-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.project-badge {
+  font-size: 14px;
+  font-weight: 700;
+  color: aquamarine;
+  margin-bottom: 8px;
+}
+
+.project-title {
+  font-size: 26px;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 8px 0;
+}
+
+.project-tagline {
+  font-size: 15px;
+  color: aquamarine;
+  margin: 0 0 16px 0;
+  font-weight: 500;
+}
+
+.project-description {
+  color: #a1a1aa;
+  font-size: 15px;
+  line-height: 1.6;
+  margin: 0 0 24px 0;
+}
+
+/* Tech Badges */
+.tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 32px;
+}
+
+.tech-badge {
+  font-size: 13px;
+  color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 6px 14px;
+  border-radius: 6px;
+}
+
+/* Buttons */
+.project-links {
+  display: flex;
+  gap: 16px;
+}
+
+.project-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  transition: background-color 0.2s ease;
+}
+
+.project-btn:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.project-btn.primary {
+  background-color: aquamarine;
+  color: #000000;
+  border-color: aquamarine;
+}
+
+.project-btn.primary:hover {
+  background-color: #66ffcc;
+}
+
+.btn-icon {
+  display: flex;
+  align-items: center;
+}
+
+/* Bottom Selector Bar */
+.project-selector {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.selector-item {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 16px;
+  background-color: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 8px;
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.2s ease;
+}
+
+.selector-item:hover {
+  background-color: rgba(255, 255, 255, 0.04);
+}
+
+.selector-item.active {
+  border-color: aquamarine;
+  background-color: rgba(127, 255, 212, 0.04);
+}
+
+.selector-number {
+  font-size: 12px;
+  font-weight: 700;
+  color: #a1a1aa;
+}
+
+.selector-item.active .selector-number {
+  color: aquamarine;
+}
+
+.selector-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: #ffffff;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+  .showcase-content {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .project-selector {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .showcase-card {
+    padding: 20px;
+  }
+
+  .project-title {
+    font-size: 22px;
+  }
+
+  .project-links {
+    flex-direction: column;
+  }
+
+  .project-btn {
+    justify-content: center;
+  }
+
+  .project-selector {
+    display: flex;
+    overflow-x: auto;
+    padding-bottom: 8px;
+    gap: 12px;
+  }
+
+  .selector-item {
+    min-width: 200px;
+    flex-shrink: 0;
+  }
+}

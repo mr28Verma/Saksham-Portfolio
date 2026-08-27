@@ -1,0 +1,166 @@
+.about-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 20px;
+  color: #ffffff;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+/* Header */
+.about-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.section-subtitle {
+  color: aquamarine;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.section-title {
+  font-size: 44px;
+  font-weight: 800;
+  margin-top: 8px;
+  color: #ffffff;
+}
+
+/* Section Headings */
+.section-heading {
+  font-size: 28px;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+/* Main Cards Grid */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  margin-bottom: 50px;
+}
+
+.about-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 35px;
+  transition: all 0.3s ease;
+}
+
+.about-card:hover {
+  border-color: rgba(127, 255, 212, 0.4);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  transform: translateY(-3px);
+}
+
+.about-card h2 {
+  font-size: 24px;
+  color: aquamarine;
+  margin-bottom: 18px;
+  font-weight: 600;
+}
+
+.about-card p {
+  color: #cccccc;
+  font-size: 16px;
+  line-height: 1.7;
+  margin-bottom: 16px;
+}
+
+.about-card p:last-child {
+  margin-bottom: 0;
+}
+
+.about-card strong {
+  color: #ffffff;
+}
+
+/* Focus Cards Grid */
+.building-section {
+  margin-bottom: 50px;
+}
+
+.focus-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 20px;
+}
+
+.focus-card {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 10px;
+  padding: 25px;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.focus-card:hover {
+  background: rgba(127, 255, 212, 0.03);
+  border-color: aquamarine;
+  transform: translateY(-2px);
+}
+
+.focus-number {
+  font-family: 'Fira Code', monospace;
+  font-size: 14px;
+  color: aquamarine;
+  opacity: 0.8;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.focus-card h3 {
+  font-size: 18px;
+  color: #ffffff;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.focus-card p {
+  color: #a0a0a0;
+  font-size: 14px;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Approach Section */
+.approach-section {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.approach-card {
+  text-align: center;
+  background: radial-gradient(circle, rgba(127, 255, 212, 0.05) 0%, rgba(0, 0, 0, 0) 70%), rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(127, 255, 212, 0.2);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .about-container {
+    padding: 40px 16px;
+  }
+
+  .section-title {
+    font-size: 32px;
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .about-card {
+    padding: 25px;
+  }
+
+  .focus-grid {
+    grid-template-columns: 1fr;
+  }
+}
