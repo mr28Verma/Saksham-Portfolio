@@ -1,32 +1,171 @@
-# React + TypeScript + Vite
+# Saksham Verma — Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+A modern personal portfolio showcasing my projects, technical skills, education, and journey as a Full-Stack Developer.
 
-Currently, two official plugins are available:
+## Live Portfolio
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+[View My Portfolio](https://myportfolio-psi-one-32.vercel.app/)
 
-## React Compiler
+## About Me
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+I'm Saksham Verma, a Full-Stack Developer focused on building modern, scalable, and user-friendly web applications.
 
-## Expanding the Oxlint configuration
+I enjoy working with both frontend and backend technologies and turning ideas into functional web applications.
 
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
+## Tech Stack
 
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
-```
+### Frontend
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+- React.js
+- TypeScript
+- HTML5
+- CSS3
+
+### Backend
+
+- Node.js
+- Express.js
+- REST APIs
+
+### Databases
+
+- MongoDB
+- PostgreSQL
+
+### Tools & Platforms
+
+- Git
+- GitHub
+- Vercel
+
+## Featured Projects
+
+### 1. University Assignment Approval System
+
+A full-stack application designed to manage assignment submissions and approval workflows.
+
+**Technologies:** React, Node.js, Express.js, MongoDB
+
+### 2. myCinema
+
+A movie-focused web application built to provide a smooth and interactive user experience.
+
+**Technologies:** React, Node.js, Express.js, MongoDB
+
+### 3. Plant Disease Detection
+
+A project focused on detecting plant diseases using image-based analysis.
+
+**Technologies:** Python, Machine Learning
+
+### 4. Todo List
+
+A simple task-management application for creating, managing, and tracking tasks.
+
+**Technologies:** HTML, CSS, JavaScript
+
+## Education
+
+**Chitkara University**
+
+Currently pursuing my degree with a focus on software development and computer science.
+
+## Connect With Me
+
+- [LinkedIn](https://www.linkedin.com/in/saksham-verma-9275b631b/)
+- [GitHub](https://github.com/mr28Verma)
+- Email: 2006sakshamchd@gmail.com
+- [Portfolio](https://myportfolio-psi-one-32.vercel.app/)
+
+## Resume
+
+[View My Resume](https://myportfolio-psi-one-32.vercel.app/)
+
+---
+
+Thank you for visiting my portfolio repository.# Saksham Verma — Portfolio
+
+A modern personal portfolio showcasing my projects, technical skills, education, and journey as a Full-Stack Developer.
+
+## Live Portfolio
+
+[View My Portfolio](https://myportfolio-psi-one-32.vercel.app/)
+
+## About Me
+
+I'm Saksham Verma, a Full-Stack Developer focused on building modern, scalable, and user-friendly web applications.
+
+I enjoy working with both frontend and backend technologies and turning ideas into functional web applications.
+
+## Tech Stack
+
+### Frontend
+
+- React.js
+- TypeScript
+- HTML5
+- CSS3
+
+### Backend
+
+- Node.js
+- Express.js
+- REST APIs
+
+### Databases
+
+- MongoDB
+- PostgreSQL
+
+### Tools & Platforms
+
+- Git
+- GitHub
+- Vercel
+
+## Featured Projects
+
+### 1. University Assignment Approval System
+
+A full-stack application designed to manage assignment submissions and approval workflows.
+
+**Technologies:** React, Node.js, Express.js, MongoDB
+
+### 2. myCinema
+
+A movie-focused web application built to provide a smooth and interactive user experience.
+
+**Technologies:** React, Node.js, Express.js, MongoDB
+
+### 3. Plant Disease Detection
+
+A project focused on detecting plant diseases using image-based analysis.
+
+**Technologies:** Python, Machine Learning
+
+### 4. Todo List
+
+A simple task-management application for creating, managing, and tracking tasks.
+
+**Technologies:** HTML, CSS, JavaScript
+
+## Education
+
+**Chitkara University**
+
+Currently pursuing my degree with a focus on software development and computer science.
+
+## Connect With Me
+
+- [LinkedIn](https://www.linkedin.com/in/saksham-verma-9275b631b/)
+- [GitHub](https://github.com/mr28Verma)
+- Email: 2006sakshamchd@gmail.com
+- [Portfolio](https://myportfolio-psi-one-32.vercel.app/)
+
+## Resume
+
+[View My Resume](https://myportfolio-psi-one-32.vercel.app/)
+
+---
+
+Thank you for visiting my portfolio repository.
