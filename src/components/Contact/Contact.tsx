@@ -1,4 +1,5 @@
 import { useState } from "react";
+import type { ChangeEvent, FormEvent } from "react";
 import "./Contact.css";
 import {
     FaEnvelope,
@@ -8,7 +9,6 @@ import {
 } from "react-icons/fa";
 
 export default function Contact() {
-
     const [formData, setFormData] = useState({
         name: "",
         email: "",
@@ -16,10 +16,11 @@ export default function Contact() {
         message: "",
     });
 
+    const [isSending, setIsSending] = useState(false);
+    const [status, setStatus] = useState("");
+
     const handleChange = (
-        e: React.ChangeEvent<
-            HTMLInputElement | HTMLTextAreaElement
-        >
+        e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
     ) => {
         setFormData({
             ...formData,
@@ -27,38 +28,37 @@ export default function Contact() {
         });
     };
 
-    const handleSubmit = async (e: React.FormEvent) => {
+    const handleSubmit = async (e: FormEvent) => {
         e.preventDefault();
+
+        const accessKey =
+            import.meta.env.VITE_WEB3FORMS_ACCESS_KEY;
+
+        // Check if Web3Forms key exists
+        if (!accessKey) {
+            setStatus(
+                "Contact form is not configured. Please try again later."
+            );
+
+            console.error(
+                "VITE_WEB3FORMS_ACCESS_KEY is missing!"
+            );
+
+            return;
+        }
+
+        setIsSending(true);
+        setStatus("");
 
         const formDataToSend = new FormData();
 
-        formDataToSend.append(
-            "access_key",
-            import.meta.env.VITE_WEB3FORMS_ACCESS_KEY
-        );
-
-        formDataToSend.append(
-            "name",
-            formData.name
-        );
-
-        formDataToSend.append(
-            "email",
-            formData.email
-        );
-
-        formDataToSend.append(
-            "subject",
-            formData.subject
-        );
-
-        formDataToSend.append(
-            "message",
-            formData.message
-        );
+        formDataToSend.append("access_key", accessKey);
+        formDataToSend.append("name", formData.name);
+        formDataToSend.append("email", formData.email);
+        formDataToSend.append("subject", formData.subject);
+        formDataToSend.append("message", formData.message);
 
         try {
-
             const response = await fetch(
                 "https://api.web3forms.com/submit",
                 {
@@ -70,9 +70,8 @@ export default function Contact() {
             const data = await response.json();
 
             if (data.success) {
-
-                console.log(
-                    "Message sent successfully!"
+                setStatus(
+                    "Message sent successfully! I'll get back to you soon."
                 );
 
                 setFormData({
@@ -81,36 +80,30 @@ export default function Contact() {
                     subject: "",
                     message: "",
                 });
-
             } else {
+                console.error("Web3Forms error:", data);
 
-                console.log(
-                    "Failed to send message:",
-                    data
+                setStatus(
+                    "Failed to send message. Please try again."
                 );
-
             }
-
         } catch (error) {
+            console.error("Something went wrong:", error);
 
-            console.log(
-                "Something went wrong:",
-                error
+            setStatus(
+                "Something went wrong. Please try again later."
             );
-
+        } finally {
+            setIsSending(false);
         }
     };
 
     return (
-        <section
-            id="contact"
-            className="contact-section"
-        >
-
+        <section id="contact" className="contact-section">
             <div className="contact-container">
 
+                {/* Header */}
                 <div className="contact-header">
-
                     <span className="contact-subtitle">
                         LET'S CONNECT
                     </span>
@@ -120,25 +113,27 @@ export default function Contact() {
                     </h2>
 
                     <p className="contact-description">
-                        Have a project, opportunity, or just want
-                        to connect? Feel free to reach out. I'm
-                        always open to discussing software
-                        development, interesting ideas, and new
-                        opportunities.
+                        Have a project, opportunity, or just want to
+                        connect? Feel free to reach out. I'm always open
+                        to discussing software development, interesting
+                        ideas, and new opportunities.
                     </p>
-
                 </div>
 
                 <div className="contact-grid">
 
-                    <div className="contact-info-column">
+                    {/* =========================
+                        LEFT SIDE
+                    ========================== */}
 
+                    <div className="contact-info-column">
                         <h3 className="column-heading">
                             Reach Out Directly
                         </h3>
 
                         <div className="contact-cards-container">
 
+                            {/* Email */}
                             <a
                                 href="mailto:2006sakshamchd@gmail.com"
                                 className="contact-card"
@@ -148,7 +143,6 @@ export default function Contact() {
                                 </div>
 
                                 <div className="contact-details">
-
                                     <span className="contact-label">
                                         Email
                                     </span>
@@ -156,10 +150,10 @@ export default function Contact() {
                                     <span className="contact-value">
                                         2006sakshamchd@gmail.com
                                     </span>
-
                                 </div>
                             </a>
 
+                            {/* LinkedIn */}
                             <a
                                 href="https://www.linkedin.com/in/saksham-verma-9275b631b/"
                                 className="contact-card"
@@ -171,7 +165,6 @@ export default function Contact() {
                                 </div>
 
                                 <div className="contact-details">
-
                                     <span className="contact-label">
                                         LinkedIn
                                     </span>
@@ -179,10 +172,10 @@ export default function Contact() {
                                     <span className="contact-value">
                                         Connect on LinkedIn
                                     </span>
-
                                 </div>
                             </a>
 
+                            {/* GitHub */}
                             <a
                                 href="https://github.com/mr28Verma"
                                 className="contact-card"
@@ -194,7 +187,6 @@ export default function Contact() {
                                 </div>
 
                                 <div className="contact-details">
-
                                     <span className="contact-label">
                                         GitHub
                                     </span>
@@ -202,16 +194,17 @@ export default function Contact() {
                                     <span className="contact-value">
                                         View GitHub Profile
                                     </span>
-
                                 </div>
                             </a>
 
                         </div>
-
                     </div>
 
-                    <div className="contact-form-column">
+                    {/* =========================
+                        RIGHT SIDE
+                    ========================== */}
 
+                    <div className="contact-form-column">
                         <h3 className="column-heading">
                             Send a Message
                         </h3>
@@ -221,8 +214,8 @@ export default function Contact() {
                             onSubmit={handleSubmit}
                         >
 
+                            {/* Name */}
                             <div className="form-group">
-
                                 <label htmlFor="name">
                                     Name
                                 </label>
@@ -236,11 +229,10 @@ export default function Contact() {
                                     onChange={handleChange}
                                     required
                                 />
-
                             </div>
 
+                            {/* Email */}
                             <div className="form-group">
-
                                 <label htmlFor="email">
                                     Email
                                 </label>
@@ -254,11 +246,10 @@ export default function Contact() {
                                     onChange={handleChange}
                                     required
                                 />
-
                             </div>
 
+                            {/* Subject */}
                             <div className="form-group">
-
                                 <label htmlFor="subject">
                                     Subject
                                 </label>
@@ -272,11 +263,10 @@ export default function Contact() {
                                     onChange={handleChange}
                                     required
                                 />
-
                             </div>
 
+                            {/* Message */}
                             <div className="form-group">
-
                                 <label htmlFor="message">
                                     Message
                                 </label>
@@ -289,33 +279,37 @@ export default function Contact() {
                                     value={formData.message}
                                     onChange={handleChange}
                                     required
-                                ></textarea>
-
+                                />
                             </div>
 
+                            {/* Submit */}
                             <button
                                 type="submit"
                                 className="submit-btn"
+                                disabled={isSending}
                             >
-
                                 <span>
-                                    Send Message
+                                    {isSending
+                                        ? "Sending..."
+                                        : "Send Message"}
                                 </span>
 
                                 <span className="btn-icon">
                                     <FaPaperPlane />
                                 </span>
-
                             </button>
 
+                            {/* Status */}
+                            {status && (
+                                <p className="form-status">
+                                    {status}
+                                </p>
+                            )}
+
                         </form>
-
                     </div>
-
                 </div>
-
             </div>
-
         </section>
     );
 }
