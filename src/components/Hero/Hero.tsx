@@ -55,7 +55,7 @@ export default function Hero() {
 
             <div className="img-container">
                 <img
-                    src="blob:https://tools.kommodo.ai/92731810-352d-47e0-8ab1-71922e037fca"
+                    src="https://cdn.phototourl.com/free/2026-09-15-9b1e1d0d-ddd9-4558-b896-73fe7927a135.jpg"
                     alt="Saksham Verma"
                 />
             </div>
