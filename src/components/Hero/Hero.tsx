@@ -55,7 +55,7 @@ export default function Hero() {
 
             <div className="img-container">
                 <img
-                    src="https://media.licdn.com/dms/image/v2/D4D03AQFgQ6asCRnC-Q/profile-displayphoto-crop_800_800/B4DaAy09dqKYAI-/0/1787559141119?e=1788998400&v=beta&t=WVYj7mG95ODdiKsMsmG1CUUuEMlrNfPljguZ54HHwsY"
+                    src="blob:https://tools.kommodo.ai/92731810-352d-47e0-8ab1-71922e037fca"
                     alt="Saksham Verma"
                 />
             </div>
