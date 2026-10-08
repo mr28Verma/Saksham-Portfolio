@@ -55,7 +55,7 @@ export default function Hero() {
 
             <div className="img-container">
                 <img
-                    src="https://cdn.phototourl.com/free/2026-09-15-9b1e1d0d-ddd9-4558-b896-73fe7927a135.jpg"
+                    src="https://res-console.cloudinary.com/ddnw2emhi/thumbnails/v1/image/upload/v1791430391/UG9ydGZvbGlvX3ZnZGJ3Zg==/drilldown"
                     alt="Saksham Verma"
                 />
             </div>
