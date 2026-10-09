@@ -55,7 +55,7 @@ export default function Hero() {
 
             <div className="img-container">
                 <img
-                    src="https://res-console.cloudinary.com/ddnw2emhi/thumbnails/v1/image/upload/v1791430391/UG9ydGZvbGlvX3ZnZGJ3Zg==/drilldown"
+                    src="/Portfolio.jpg"
                     alt="Saksham Verma"
                 />
             </div>
